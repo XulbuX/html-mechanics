@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" class="main-bg">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Forms</title>
+  <link rel="stylesheet" href="css/font.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <div id="top-fadeout"></div>
+
+  <header>
+    <div class="header-title">FORMS</div>
+    <nav class="page-nav">
+      <a href="index.html">Home</a>
+      <a href="forms.html" class="active">Forms</a>
+      <a href="tables.html">Tables</a>
+      <a href="links-media.html">Links & Media</a>
+      <a href="grids.html">Grids</a>
+    </nav>
+  </header>
+
+  <main class="main-m">
+    <form action="https://gibm.becknet.ch/formular/formular.php" method="post">
+      <fieldset>
+        <legend>General</legend>
+        <!-- BASIC TEXT INPUTS WITH VALIDATION -->
+        <div class="form-input">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required minlength="3" maxlength="50" autofocus
+            placeholder="Your full name">
+        </div>
+
+        <div class="form-input">
+          <label for="email">E-Mail</label>
+          <input type="email" id="email" name="email" required placeholder="example@domain.com">
+        </div>
+
+        <div class="form-input">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required minlength="8"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="Must contain at least one number, one uppercase and lowercase letter, and at least 8 characters">
+        </div>
+
+        <!-- SPECIAL ATTRIBUTE EXAMPLES -->
+        <div class="form-input">
+          <label for="readonly-field">Username (auto-generated)</label>
+          <input type="text" id="readonly-field" name="readonly-field" value="user_2025" readonly>
+          <small class="input-hint">This field is read-only and cannot be edited</small>
+        </div>
+
+        <div class="form-input">
+          <label for="disabled-field">Current Plan</label>
+          <input type="text" id="disabled-field" name="disabled-field" value="Premium Plan" disabled>
+          <small class="input-hint">This field is disabled and cannot be submitted</small>
+        </div>
+
+        <!-- COUNTRY DROPDOWN -->
+        <div class="form-input">
+          <label for="country">Country</label>
+          <select id="country" name="country">
+            <option value="" disabled selected>Select your country</option>
+            <option value="switzerland">Switzerland</option>
+            <option value="germany">Germany</option>
+            <option value="france">France</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <!-- RADIO BUTTONS -->
+      <fieldset>
+        <legend>Gender</legend>
+        <div style="display: flex; gap: 20px;">
+          <div class="input-group">
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+          </div>
+          <div class="input-group">
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+          </div>
+          <div class="input-group">
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- TEXTAREA WITH CHARACTER COUNTER -->
+      <fieldset>
+        <legend>Gender</legend>
+        <div class="form-input">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" minlength="10" maxlength="500" required
+            placeholder="Enter your message here (10-500 characters)"></textarea>
+          <small class="input-hint"><span id="char-count">0</span>/500 characters</small>
+        </div>
+        <script>
+          document.getElementById('message').addEventListener('input', function () {
+            document.getElementById('char-count').textContent = this.value.length;
+          });
+        </script>
+
+        <!-- CHECKBOX -->
+        <div class="input-group">
+          <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+          <label for="newsletter">Subscribe to newsletter</label>
+        </div>
+      </fieldset>
+
+      <!-- ADVANCED FORM ELEMENTS -->
+      <fieldset>
+        <legend>Additional Information</legend>
+
+        <!-- DATE INPUT WITH MIN/MAX VALIDATION -->
+        <div class="form-input">
+          <label for="birthdate">Date of Birth</label>
+          <input type="date" id="birthdate" name="birthdate" min="1950-01-01" max="2023-12-31" required>
+          <small class="input-hint">Date must be between 1950 and 2023</small>
+        </div>
+
+        <!-- PHONE WITH PATTERN -->
+        <div class="form-input">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="+41 XX XXX XX XX"
+            pattern="[+][0-9]{2} [0-9]{2} [0-9]{3} [0-9]{2} [0-9]{2}" title="Format: +41 XX XXX XX XX">
+        </div>
+
+        <!-- FILE UPLOAD -->
+        <div class="form-input">
+          <label for="profile-picture">Profile Picture</label>
+          <input type="file" id="profile-picture" name="profile-picture" accept="image/*">
+        </div>
+
+        <!-- URL INPUT -->
+        <div class="form-input">
+          <label for="website">Website</label>
+          <input type="url" id="website" name="website" placeholder="https://example.com">
+        </div>
+      </fieldset>
+
+      <!-- SPECIAL INPUT TYPES -->
+      <fieldset>
+        <legend>Preferences</legend>
+
+        <!-- COLOR CHECKBOXES -->
+        <div style="margin-bottom: 15px;">
+          <label>Favorite Colors:</label>
+          <div class="checkbox-group">
+            <div class="input-group">
+              <input type="checkbox" id="color-red" name="colors" value="red" style="accent-color: #FF7075;">
+              <label for="color-red">Red</label>
+            </div>
+            <div class="input-group">
+              <input type="checkbox" id="color-green" name="colors" value="green" style="accent-color: #70FF75;">
+              <label for="color-green">Green</label>
+            </div>
+            <div class="input-group">
+              <input type="checkbox" id="color-blue" name="colors" value="blue" style="accent-color: #7075FF;">
+              <label for="color-blue">Blue</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- MULTI-SELECT -->
+        <div class="form-input" style="margin-bottom: 15px;">
+          <label for="frameworks">Frameworks (multi-select):</label>
+          <select id="frameworks" name="frameworks" multiple size="3">
+            <option value="react">React</option>
+            <option value="vue">Vue</option>
+            <option value="angular">Angular</option>
+          </select>
+          <small class="input-hint">Hold Ctrl (or Cmd) to select multiple options</small>
+        </div>
+
+        <!-- RANGE SLIDER -->
+        <div class="form-input">
+          <label for="experience">Years of Experience</label>
+          <input type="range" id="experience" name="experience" min="0" max="20" step="1" value="10"
+            oninput="this.nextElementSibling.value = this.value">
+          <output>10</output>
+        </div>
+
+        <!-- TIME INPUT -->
+        <div class="form-input">
+          <label for="favorite-time">Favorite Time of Day</label>
+          <input type="time" id="favorite-time" name="favorite-time">
+        </div>
+
+        <!-- NUMBER INPUT -->
+        <div class="form-input">
+          <label for="favorite-number">Favorite Number</label>
+          <input type="number" id="favorite-number" name="favorite-number" min="1" max="100" step="1" value="42">
+          <small class="input-hint">The 'value' attribute sets the default value</small>
+        </div>
+
+        <!-- COLOR PICKER -->
+        <div class="form-input">
+          <label for="color-picker">Favorite Color (HTML5 Color Picker)</label>
+          <input type="color" id="color-picker" name="color-picker" value="#6065FF">
+        </div>
+
+        <!-- DATALIST FOR SUGGESTIONS -->
+        <div class="form-input">
+          <label for="browser">Favorite Browser (with suggestions)</label>
+          <input list="browsers" id="browser" name="browser" placeholder="Type or select a browser">
+          <datalist id="browsers">
+            <option value="Chrome">
+            <option value="Firefox">
+            <option value="Safari">
+            <option value="Edge">
+          </datalist>
+          <small class="input-hint">Datalist provides suggestions while typing</small>
+        </div>
+      </fieldset>
+
+      <!-- SUBMIT BUTTONS -->
+      <div class="form-submit-btn-container">
+        <button type="reset" class="button-secondary">Reset</button>
+        <button type="submit" class="button-primary">Submit</button>
+      </div>
+    </form>
+  </main>
+</body>
+
+</html>
