@@ -298,21 +298,24 @@ header {
 }
 
 .card.frosted {
-  border: solid 1px rgb(var(--white-rgb) / 0.12);
   background-color: rgb(var(--gray-800-rgb) / 0.40);
   backdrop-filter: blur(10px);
 }
 .card.frosted::before {
   opacity: 80%;
+  background-color: transparent;
   background: linear-gradient(rgb(var(--gray-800-rgb)), rgb(var(--accent-rgb) / 0.50)) border-box;
 }
 
 .card.fx {
-  transition: transform 400ms ease, border-color 300ms ease;
+  transition: transform 400ms ease;
 }
 .card.fx:hover {
   transform: translateY(-5px);
   border-color: rgb(var(--accent-rgb) / 0.50);
+}
+.card.fx:hover::before {
+  background: rgb(var(--accent-rgb) / 0.50);
 }
 
 
