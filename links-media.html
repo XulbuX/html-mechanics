@@ -28,198 +28,201 @@
   <main class="main-mx main-pt main-pb main-container">
     <section>
       <h2 style="margin-bottom: 20px;">Link Functions</h2>
-      <ul>
-        <li>
-          Linking to another webpage:
+      <div class="cards-container">
+        <div class="card ">
+          <h3>Standard Link</h3>
+          <p>Links to another webpage. Opens in the same tab by default.</p>
           <a href="http://www.google.com" target="_self">Google (this tab)</a>
-          <pre><code class="language-html">&lt;a href="https://www.google.com" target="_self"&gt;Google (this tab)&lt;/a&gt;</code></pre>
-        </li>
-        <li>
-          Linking to a text passage in the same document. This text passage must also be defined with an anchor. The
-          anchor has an <code>id</code> attribute with a unique name:
-          <br>(Example: <a href="#media-section">to the Media section on this page</a>)<br>
-          <pre><code class="language-html">&lt;a href="#internal-link-target"&gt;Jump to target anchor&lt;/a&gt;
-
-&lt;!-- ... later in the document ... --&gt;
-&lt;h2 id="internal-link-target"&gt;Target anchor for internal link&lt;/h2&gt;</code></pre>
-        </li>
-        <li>
-          Linking an email address, so the user can directly write a new email:
-          <a href="mailto:example@domain.com">example@domain.com</a>
-          <pre><code class="language-html">&lt;a href="mailto:example@domain.com"&gt;example@domain.com&lt;/a&gt;</code></pre>
-        </li>
-        <li>
-          Linking a phone number, so this number can be called directly on mobile devices:
-          <a href="tel:+0123456789">Call us: +01 234 567 89</a>
-          <pre><code class="language-html">&lt;a href="tel:+0123456789"&gt;Call us: +01 234 567 89&lt;/a&gt;</code></pre>
-        </li>
-        <li>
-          Additionally, links can be programmed to open in a new tab:
+          <pre><code class="language-html">&lt;a href="https://www.google.com"&gt;Google&lt;/a&gt;</code></pre>
+        </div>
+        <div class="card">
+          <h3>New Tab Link</h3>
+          <p>Use <code>target="_blank"</code> to open the link in a new browser tab.</p>
           <a href="https://www.google.com" target="_blank">Google (new tab)</a>
-          <pre><code class="language-html">&lt;a href="https://www.google.com" target="_blank"&gt;Google (new tab)&lt;/a&gt;</code></pre>
-        </li>
-      </ul>
+          <pre><code class="language-html">&lt;a href="..." target="_blank"&gt;New Tab&lt;/a&gt;</code></pre>
+        </div>
+        <div class="card">
+          <h3>Internal Link</h3>
+          <p>Jumps to another section on the same page using its <code>id</code>.</p>
+          <a href="#media-section">Go to Media section</a>
+          <pre><code class="language-html">&lt;a href="#section-id"&gt;Internal Link&lt;/a&gt;</code></pre>
+        </div>
+        <div class="card">
+          <h3>Email Link</h3>
+          <p>Opens the user's default email client with a pre-filled address.</p>
+          <a href="mailto:example@domain.com">example@domain.com</a>
+          <pre><code class="language-html">&lt;a href="mailto:..."&gt;Email&lt;/a&gt;</code></pre>
+        </div>
+        <div class="card">
+          <h3>Phone Link</h3>
+          <p>Prompts the user to call a phone number on mobile devices.</p>
+          <a href="tel:+0123456789">Call us: +01 234 567 89</a>
+          <pre><code class="language-html">&lt;a href="tel:..."&gt;Call Us&lt;/a&gt;</code></pre>
+        </div>
+      </div>
     </section>
 
     <section>
       <h2 style="margin-top: 40px; margin-bottom: 20px;">IFrames</h2>
-      <iframe style="width: 100%; max-width: 800px; height: 451px; border: none;"
-        src="https://www.youtube.com/embed/zCVdOKMCLv8" title="Giving 841,709 people my Netflix password"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+      <div class="card">
+        <p style="margin-top: 0;">IFrames are used to embed content from other sources, like a YouTube video.</p>
+        <pre><code class="language-html">&lt;iframe src="https://example.com/site" title="IFrame Title" allowfullscreen&gt;&lt;/iframe&gt;</code></pre>
+        <iframe style="width: 100%; max-width: 800px; height: 451px; border: none;"
+          src="https://www.youtube.com/embed/zCVdOKMCLv8" title="Giving 841,709 people my Netflix password"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+      </div>
     </section>
 
-    <section id="media-section" style="padding-top: 40px;">
+    <section id="media-section" style="margin-top: 40px;">
       <h2 style="margin-bottom: 20px;">Image Formats for the Web</h2>
-      <ul>
-        <li><strong>GIF:</strong> lossily removes a large part of the colors from an image, leaving 255 different
-          colors. Transparency is either fully transparent or completely opaque.<br>
-          <em>Typical usage:</em> short loops, reaction GIFs, simple logos or icons where maximum compatibility is
-          important.<br>
-          <img src="assets/img/example.gif" alt="Example GIF animation" class="example-img" loading="lazy">
-        </li>
-        <li><strong>JP(E)G:</strong> the lossy compression can be specified with a value between 0 and 100.<br>
-          100 = low compression &gt; large file<br>
-          0 = high compression &gt; small file<br>
-          <em>Typical usage:</em> photos, photorealistic backgrounds, social media images, product photos in
-          shops.<br>
-          <img src="assets/img/example.jpg" alt="Example JPEG image" class="example-img" loading="lazy">
-        </li>
-        <li><strong>PNG:</strong> lossless image format, therefore rather large file, but very detailed. Supports
-          transparency with an alpha channel.<br>
-          <em>Typical usage:</em> UI elements, screenshots, logos & icons with transparency, diagrams, pixel art.<br>
-          <img src="assets/img/example.png" alt="Example PNG image with transparency" class="example-img"
-            loading="lazy">
-        </li>
-        <li><strong>AVIF:</strong> newer image format, offers lossless and lossy compression.<br>
-          Is ~50% smaller than a JPEG of similar quality, supports transparency with an alpha channel.<br>
-          <em>Typical usage:</em> modern websites with many photos / HDR images, e-commerce, animated stickers with
-          transparency.<br>
-          <a href="https://caniuse.com/?search=avif" target="_blank">caniuse.com/?search=avif</a><br>
-          <img src="assets/img/example.avif" alt="Example AVIF image" class="example-img" loading="lazy">
-        </li>
-        <li><strong>WEBP:</strong> newer image format, offers lossless and lossy compression, supports transparency
-          with
-          an alpha channel.<br>
-          <em>Typical usage:</em> general web graphics, photos, thumbnails, animated stickers; good compromise between
-          file size & support.<br>
-          <a href="https://caniuse.com/?search=webp" target="_blank">caniuse.com/?search=webp</a><br>
-          <img src="assets/img/example.webp" alt="Example WebP image" class="example-img" loading="lazy">
-        </li>
-        <li><strong>SVG:</strong> Scalable Vector Graphic - Vector-based image format, information is described with
-          coordinates, can be scaled losslessly. Very small file size. Not suitable for photos.<br>
-          <em>Typical usage:</em> logos, icons, diagrams, infographics, UI illustrations, responsive graphics.<br>
-          <img src="assets/img/example.svg" alt="Example SVG graphic" class="example-img" loading="lazy">
-        </li>
-      </ul>
+      <div class="card">
+        <div class="image-format-grid">
+          <div>
+            <h3>GIF</h3>
+            <p>Lossily removes a large part of the colors from an image, leaving 255 different colors. Transparency is
+              either fully transparent or completely opaque.</p>
+            <p><em>Typical usage:</em> short loops, reaction GIFs, simple logos or icons where maximum compatibility is
+              important.</p>
+            <img src="assets/img/example.gif" alt="Example GIF animation" class="example-img" loading="lazy">
+          </div>
+          <div>
+            <h3>JP(E)G</h3>
+            <p>The lossy compression can be specified with a value between 0 and 100. 100 = low compression &gt; large
+              file, 0 = high compression &gt; small file</p>
+            <p><em>Typical usage:</em> photos, photorealistic backgrounds, social media images, product photos in
+              shops.</p>
+            <img src="assets/img/example.jpg" alt="Example JPEG image" class="example-img" loading="lazy">
+          </div>
+          <div>
+            <h3>PNG</h3>
+            <p>Lossless image format, therefore rather large file, but very detailed. Supports transparency with an
+              alpha
+              channel.</p>
+            <p><em>Typical usage:</em> UI elements, screenshots, logos & icons with transparency, diagrams, pixel art.
+            </p>
+            <img src="assets/img/example.png" alt="Example PNG image with transparency" class="example-img"
+              loading="lazy">
+          </div>
+          <div>
+            <h3>AVIF</h3>
+            <p>Newer image format, offers lossless and lossy compression. Is ~50% smaller than a JPEG of similar
+              quality, supports transparency with an alpha channel.</p>
+            <p><em>Typical usage:</em> modern websites with many photos / HDR images, e-commerce, animated stickers with
+              transparency. <a href="https://caniuse.com/?search=avif" target="_blank">caniuse.com/?search=avif</a></p>
+            <img src="assets/img/example.avif" alt="Example AVIF image" class="example-img" loading="lazy">
+          </div>
+          <div>
+            <h3>WEBP</h3>
+            <p>Newer image format, offers lossless and lossy compression, supports transparency with an alpha channel.
+            </p>
+            <p><em>Typical usage:</em> general web graphics, photos, thumbnails, animated stickers; good compromise
+              between file size & support. <a href="https://caniuse.com/?search=webp"
+                target="_blank">caniuse.com/?search=webp</a></p>
+            <img src="assets/img/example.webp" alt="Example WebP image" class="example-img" loading="lazy">
+          </div>
+          <div>
+            <h3>SVG</h3>
+            <p>Scalable Vector Graphic - Vector-based image format, information is described with coordinates, can be
+              scaled losslessly. Very small file size. Not suitable for photos.</p>
+            <p><em>Typical usage:</em> logos, icons, diagrams, infographics, UI illustrations, responsive graphics.</p>
+            <img src="assets/img/example.svg" alt="Example SVG graphic" class="example-img" loading="lazy">
+          </div>
+        </div>
+      </div>
+      <div class="card" style="margin-top: 10px;">
+        <h4>Further Information on Image Formats:</h4>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Image_types" target="_blank">
+          MDN Web Docs: Image file type and format guide
+        </a>
+      </div>
+    </section>
 
-      <h3 style="margin-top: 30px; margin-bottom: 10px;">Further Information on Image Formats:</h3>
-      <ul>
-        <li><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Image_types" target="_blank">MDN
-            Web Docs: Image file type and format guide</a></li>
-      </ul>
-
-      <h3 style="margin-top: 30px; margin-bottom: 10px;">Embedding Images on a Webpage:</h3>
-      <p>Simple embedding:</p>
-      <pre><code class="language-html">&lt;img src="assets/img/notexistent.jpg" alt="Not existing image"&gt;</code></pre>
-      <p style="margin-top:10px;">Example:</p>
-      <img src="assets/img/notexistent.jpg" alt="Not existing image" class="example-img" style="padding: 0 2px;"
-        loading="lazy">
-
-      <p style="margin-top:20px;">The <code>&lt;picture&gt;</code> tag is used to provide different formats or sizes
-        depending on the browser or screen size - ideal e.g. for modern formats like WebP or AVIF with fallbacks:</p>
-      <pre><code class="language-html">&lt;!-- Embedding images on a webpage with &lt;picture&gt; --&gt;
-&lt;picture&gt;
-  &lt;!-- Modern formats first --&gt;
-  &lt;source srcset="assets/img/image.avif" type="image/avif"&gt;
-  &lt;source srcset="assets/img/image.webp" type="image/webp"&gt;
-  &lt;!-- Fallback for browsers that do not support AVIF/WebP --&gt;
-  &lt;img src="assets/img/image.jpg" alt="Image description"&gt;
+    <section style="margin-top: 40px;">
+      <h2 style="margin-bottom: 20px;">Embedding Media</h2>
+      <div class="card">
+        <h3>Images</h3>
+        <p>Simple embedding an image from an external URL with <code>&lt;img&gt;</code>:</p>
+        <pre><code class="language-html">&lt;img src="https://example.com/image.jpg" alt="Description of the image"&gt;</code></pre>
+        <img
+          src="https://www.shutterstock.com/image-illustration/light-stripes-moving-fast-connections-600nw-601301042.jpg"
+          alt="Image Preview from Shutterstock" class="example-img" loading="lazy">
+        <p style="margin-top: 2rem;">For the case where the image is not found, you can define an alternative text with
+          <code>alt="..."</code>:
+        </p>
+        <pre><code class="language-html">&lt;img src="assets/img/notexistent.jpg" alt="Not existing image"&gt;</code></pre>
+        <img src="assets/img/notexistent.jpg" alt="Not existing image" class="example-img" style="padding: 0 2px;"
+          loading="lazy">
+        <p style="margin-top: 2rem;">Use <code>&lt;picture&gt;</code> for multiple formats, so the browser can decide
+          which one to use:</p>
+        <pre><code class="language-html">&lt;picture&gt;
+  &lt;source srcset="image_file.avif" type="image/avif"&gt;
+  &lt;source srcset="image_file.webp" type="image/webp"&gt;
+  &lt;img src="image_file.jpg" alt="Description of the image" loading="lazy"&gt;
 &lt;/picture&gt;</code></pre>
-      <p style="margin-top:10px;">Example (the browser chooses the best supported format):</p>
-      <picture>
-        <source srcset="assets/img/photo.avif" type="image/avif">
-        <source srcset="assets/img/photo.webp" type="image/webp">
-        <img src="assets/img/photo.jpg" alt="Photo with Picture Tag" class="example-img" loading="lazy">
-      </picture>
-      <ul>
-        <li>The <code>&lt;source&gt;</code> elements specify alternative formats. The browser selects the first
-          supported format.</li>
-        <li>The <code>&lt;img&gt;</code> element serves as a fallback.</li>
-      </ul>
+        <picture>
+          <source srcset="assets/img/photo.avif" type="image/avif">
+          <source srcset="assets/img/photo.webp" type="image/webp">
+          <img src="assets/img/photo.jpg" alt="Photo with Picture Tag" class="example-img" loading="lazy">
+        </picture>
+        <h4 style="margin-top: 2rem;">Further Information:</h4>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img" target="_blank">
+          MDN: &lt;img&gt;
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/picture" target="_blank">
+          MDN: &lt;picture&gt;
+        </a>
+        </ul>
+      </div>
 
-      <h3 style="margin-top: 30px; margin-bottom: 10px;">Further Information:</h3>
-      <ul>
-        <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img" target="_blank">MDN
-            Web Docs: &lt;img&gt;: The Image Embed element</a></li>
-        <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/picture" target="_blank">MDN
-            Web Docs: &lt;picture&gt;: The Picture element</a></li>
-      </ul>
-    </section>
-
-    <section id="video-section" style="padding-top: 40px;">
-      <h2 style="margin-bottom: 20px;">Video on the Web</h2>
-      <p>Embedding a video is done using the <code>&lt;video&gt;</code> tag. It&apos;s recommended to provide multiple
-        source
-        formats for broader browser compatibility.</p>
-      <pre><code class="language-html">&lt;video controls&gt;
-  &lt;source src="assets/video/example.mp4" type="video/mp4"&gt;
-  &lt;source src="assets/video/example.webm" type="video/webm"&gt;
-  Your browser does not support the video tag.
+      <div class="card" style="margin-top: 10px;">
+        <h3>Video</h3>
+        <p>Use the <code>&lt;video&gt;</code> tag with <code>controls</code> to embed videos. Provide multiple
+          sources for compatibility.</p>
+        <pre><code class="language-html">&lt;video controls&gt;
+  &lt;source src="video_file.mp4" type="video/mp4"&gt;
+  &lt;source src="video_file.webm" type="video/webm"&gt;
+  Your browser does not support the video element.
 &lt;/video&gt;</code></pre>
-      <p style="margin-top:10px;">Example (the browser chooses the best supported format):</p>
-      <video controls poster="assets/img/example_video_poster.jpg" class="example-img"
-        style="width:100%; max-width: 600px;">
-        <source src="assets/video/example.mp4" type="video/mp4">
-        <source src="assets/video/example.webm" type="video/webm">
-        Your browser does not support the video tag.
-      </video>
-      <ul>
-        <li>The <code>controls</code> attribute adds video controls, like play, pause, and volume.</li>
-        <li>The <code>width</code> attribute sets the width of the video player.</li>
-        <li>The <code>poster</code> attribute specifies an image to be shown while the video is downloading, or until
-          the user hits the play button.</li>
-        <li><code>&lt;source&gt;</code> elements specify alternative video files. The browser will choose the first
-          source it supports.</li>
-        <li>Other useful attributes include <code>autoplay</code>, <code>loop</code>, and <code>muted</code>.</li>
-      </ul>
-      <h3 style="margin-top: 30px; margin-bottom: 10px;">Further Information:</h3>
-      <ul>
-        <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video" target="_blank">MDN Web Docs:
-            &lt;video&gt;: The Video Embed element</a></li>
-        <li><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs" target="_blank">MDN Web
-            Docs: Common video codecs and containers</a></li>
-      </ul>
-    </section>
+        <video controls poster="assets/img/example_video_poster.jpg" class="example-img"
+          style="width:100%; max-width: 600px;">
+          <source src="assets/video/example.mp4" type="video/mp4">
+          <source src="assets/video/example.webm" type="video/webm">
+          Your browser does not support the video element.
+        </video>
+        <h4 style="margin-top: 2rem;">Further Information:</h4>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video" target="_blank">
+          MDN: &lt;video&gt;
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_codecs" target="_blank">
+          MDN: Video codecs
+        </a>
+        </ul>
+      </div>
 
-    <section id="audio-section" style="padding-top: 40px;">
-      <h2 style="margin-bottom: 20px;">Audio on the Web</h2>
-      <p>Embedding audio is done using the <code>&lt;audio&gt;</code> tag. Similar to video, providing multiple source
-        formats is a good practice.</p>
-      <pre><code class="language-html">&lt;audio controls&gt;
-  &lt;source src="assets/audio/example.mp3" type="audio/mpeg"&gt;
-  &lt;source src="assets/audio/example.ogg" type="audio/ogg"&gt;
+      <div class="card" style="margin-top: 10px;">
+        <h3>Audio</h3>
+        <p>Use the <code>&lt;audio&gt;</code> tag with <code>controls</code> to embed audio. Provide multiple sources
+          for compatibility.</p>
+        <pre><code class="language-html">&lt;audio controls&gt;
+  &lt;source src="audio_file.mp3" type="audio/mpeg"&gt;
+  &lt;source src="audio_file.ogg" type="audio/ogg"&gt;
   Your browser does not support the audio element.
 &lt;/audio&gt;</code></pre>
-      <p style="margin-top:10px;">Example (the browser chooses the best supported format):</p>
-      <audio controls style="width:100%; max-width: 600px;">
-        <source src="assets/audio/example.mp3" type="audio/mpeg">
-        <source src="assets/audio/example.ogg" type="audio/ogg">
-        Your browser does not support the audio element.
-      </audio>
-      <ul>
-        <li>The <code>controls</code> attribute adds audio controls, like play, pause, and volume.</li>
-        <li><code>&lt;source&gt;</code> elements specify alternative audio files. The browser will choose the first
-          source it supports.</li>
-        <li>Other useful attributes include <code>autoplay</code>, <code>loop</code>, and <code>muted</code>.</li>
-      </ul>
-      <h3 style="margin-top: 30px; margin-bottom: 10px;">Further Information:</h3>
-      <ul>
-        <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio" target="_blank">MDN Web Docs:
-            &lt;audio&gt;: The Audio Embed element</a></li>
-        <li><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs" target="_blank">MDN Web
-            Docs: Common audio codecs and containers</a></li>
-      </ul>
+        <audio controls style="width:100%; max-width: 600px;">
+          <source src="assets/audio/example.mp3" type="audio/mpeg">
+          <source src="assets/audio/example.ogg" type="audio/ogg">
+          Your browser does not support the audio element.
+        </audio>
+        <h4 style="margin-top: 2rem;">Further Information:</h4>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio" target="_blank">
+          MDN: &lt;audio&gt;
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Audio_codecs" target="_blank">
+          MDN: Audio codecs
+        </a>
+        </ul>
+      </div>
     </section>
   </main>
 
