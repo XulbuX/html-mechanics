@@ -162,9 +162,7 @@ header {
   header {
     flex-direction: column;
   }
-  .header-title {
-    padding: 25px 0;
-  }
+  .header-title { padding: 25px 0 }
 }
 
 
