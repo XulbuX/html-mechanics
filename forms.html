@@ -33,7 +33,8 @@
       <div class="card">
         <h2 style="margin-top: 0;">General Inputs</h2>
         <p>This section covers basic input fields, including text, email, and password, with client-side validation.
-          It also demonstrates special attributes like <code>readonly</code> and <code>disabled</code>, and a standard
+          It also demonstrates special attributes like <code>readonly</code>, <code>disabled</code> and
+          <code>autofocus</code>, and a standard
           dropdown with <code>&lt;select&gt;</code>.
         </p>
       </div>
@@ -72,11 +73,19 @@
 
 &lt;!-- Readonly field --&gt;
 &lt;label for="readonly-field"&gt;Username (auto-generated)&lt;/label&gt;
-&lt;input type="text" id="readonly-field" value="user_2025" readonly&gt;
+&lt;input
+  type="text"
+  id="readonly-field"
+  value="user_2025"
+  readonly&gt;
 
 &lt;!-- Disabled field --&gt;
 &lt;label for="disabled-field"&gt;Current Plan&lt;/label&gt;
-&lt;input type="text" id="disabled-field" value="Premium Plan" disabled&gt;
+&lt;input
+  type="text"
+  id="disabled-field"
+  value="Premium Plan"
+  disabled&gt;
 
 &lt;!-- Country dropdown --&gt;
 &lt;label for="country"&gt;Country&lt;/label&gt;
@@ -133,11 +142,23 @@
       </div>
       <pre class="blur"><code class="language-html">&lt;!-- Radio buttons for single choice --&gt;
 &lt;p&gt;Please select your gender:&lt;/p&gt;
-&lt;input type="radio" id="male-ex" name="gender-ex" value="male"&gt;
+&lt;input
+  type="radio"
+  id="male-ex"
+  name="gender-ex"
+  value="male"&gt;
 &lt;label for="male-ex"&gt;Male&lt;/label&gt;
-&lt;input type="radio" id="female-ex" name="gender-ex" value="female"&gt;
+&lt;input
+  type="radio"
+  id="female-ex"
+  name="gender-ex"
+  value="female"&gt;
 &lt;label for="female-ex"&gt;Female&lt;/label&gt;
-&lt;input type="radio" id="other-ex" name="gender-ex" value="other"&gt;
+&lt;input
+  type="radio"
+  id="other-ex"
+  name="gender-ex"
+  value="other"&gt;
 &lt;label for="other-ex"&gt;Other&lt;/label&gt;
 
 &lt;!-- Textarea with character counter --&gt;
@@ -157,7 +178,11 @@
 &lt;/script&gt;
 
 &lt;!-- Checkbox for a binary option --&gt;
-&lt;input type="checkbox" id="newsletter-ex" name="newsletter" value="yes"&gt;
+&lt;input
+  type="checkbox"
+  id="newsletter-ex"
+  name="newsletter"
+  value="yes"&gt;
 &lt;label for="newsletter-ex"&gt;Subscribe to newsletter&lt;/label&gt;</code></pre>
       <fieldset>
         <legend>Feedback</legend>
@@ -199,19 +224,37 @@
       </div>
       <pre class="blur"><code class="language-html">&lt;!-- Date input with min/max validation --&gt;
 &lt;label for="birthdate"&gt;Date of Birth&lt;/label&gt;
-&lt;input type="date" id="birthdate" name="birthdate" min="1950-01-01" max="2023-12-31" required&gt;
+&lt;input
+  type="date"
+  id="birthdate"
+  name="birthdate"
+  min="1950-01-01"
+  max="2023-12-31"
+  required&gt;
 
 &lt;!-- Phone input with pattern --&gt;
 &lt;label for="phone"&gt;Phone Number&lt;/label&gt;
-&lt;input type="tel" id="phone" name="phone" pattern="[+][0-9]{2} [0-9]{2} [0-9]{3} [0-9]{2} [0-9]{2}"&gt;
+&lt;input
+  type="tel"
+  id="phone"
+  name="phone"
+  pattern="[+][0-9]{2} [0-9]{2} [0-9]{3} [0-9]{2} [0-9]{2}"&gt;
 
 &lt;!-- File upload --&gt;
 &lt;label for="profile-picture"&gt;Profile Picture&lt;/label&gt;
-&lt;input type="file" id="profile-picture" name="profile-picture" accept="image/*"&gt;
+&lt;input
+  type="file"
+  id="profile-picture"
+  name="profile-picture"
+  accept="image/*"&gt;
 
 &lt;!-- URL input --&gt;
 &lt;label for="website"&gt;Website&lt;/label&gt;
-&lt;input type="url" id="website" name="website" placeholder="https://example.com"&gt;</code></pre>
+&lt;input
+  type="url"
+  id="website"
+  name="website"
+  placeholder="https://example.com"&gt;</code></pre>
       <fieldset>
         <legend>Additional Information</legend>
         <div class="form-input">
@@ -241,11 +284,26 @@
       </div>
       <pre class="blur"><code class="language-html">&lt;!-- Styled checkboxes --&gt;
 &lt;p&gt;Favorite Colors:&lt;/p&gt;
-&lt;input type="checkbox" id="color-red-ex" name="colors-ex" value="red" style="accent-color: #FF7075;"&gt;
+&lt;input
+  type="checkbox"
+  id="color-red-ex"
+  name="colors-ex"
+  value="red"
+  style="accent-color: #FF7075;"&gt;
 &lt;label for="color-red-ex"&gt;Red&lt;/label&gt;
-&lt;input type="checkbox" id="color-green-ex" name="colors-ex" value="green" style="accent-color: #70FF75;"&gt;
+&lt;input
+  type="checkbox"
+  id="color-green-ex"
+  name="colors-ex"
+  value="green"
+  style="accent-color: #70FF75;"&gt;
 &lt;label for="color-green-ex"&gt;Green&lt;/label&gt;
-&lt;input type="checkbox" id="color-blue-ex" name="colors-ex" value="blue" style="accent-color: #7075FF;"&gt;
+&lt;input
+  type="checkbox"
+  id="color-blue-ex"
+  name="colors-ex"
+  value="blue"
+  style="accent-color: #7075FF;"&gt;
 &lt;label for="color-blue-ex"&gt;Blue&lt;/label&gt;
 
 &lt;!-- Multi-select dropdown --&gt;
@@ -258,24 +316,48 @@
 
 &lt;!-- Range slider with output --&gt;
 &lt;label for="experience-ex"&gt;Years of Experience&lt;/label&gt;
-&lt;input type="range" id="experience-ex" name="experience-ex" min="0" max="20" value="10" oninput="this.nextElementSibling.value = this.value"&gt;
+&lt;input
+  type="range"
+  id="experience-ex"
+  name="experience-ex"
+  min="0"
+  max="20"
+  value="10"
+  oninput="this.nextElementSibling.value = this.value"&gt;
 &lt;output&gt;10&lt;/output&gt;
 
 &lt;!-- Time input --&gt;
 &lt;label for="favorite-time-ex"&gt;Favorite Time of Day&lt;/label&gt;
-&lt;input type="time" id="favorite-time-ex" name="favorite-time-ex"&gt;
+&lt;input
+  type="time"
+  id="favorite-time-ex"
+  name="favorite-time-ex"&gt;
 
 &lt;!-- Number input --&gt;
 &lt;label for="favorite-number-ex"&gt;Favorite Number&lt;/label&gt;
-&lt;input type="number" id="favorite-number-ex" name="favorite-number-ex" min="1" max="100" step="1" value="42"&gt;
+&lt;input
+  type="number"
+  id="favorite-number-ex"
+  name="favorite-number-ex"
+  min="1"
+  max="100"
+  step="1"
+  value="42"&gt;
 
 &lt;!-- Color picker --&gt;
 &lt;label for="color-picker-ex"&gt;Favorite Color&lt;/label&gt;
-&lt;input type="color" id="color-picker-ex" name="color-picker-ex" value="#6065FF"&gt;
+&lt;input
+  type="color"
+  id="color-picker-ex"
+  name="color-picker-ex"
+  value="#6065FF"&gt;
 
 &lt;!-- Datalist for suggestions --&gt;
 &lt;label for="browser-ex"&gt;Favorite Browser&lt;/label&gt;
-&lt;input list="browsers-ex" id="browser-ex" name="browser-ex"&gt;
+&lt;input
+  list="browsers-ex"
+  id="browser-ex"
+  name="browser-ex"&gt;
 &lt;datalist id="browsers-ex"&gt;
   &lt;option value="Chrome"&gt;
   &lt;option value="Firefox"&gt;
