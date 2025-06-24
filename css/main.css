@@ -107,6 +107,23 @@ a:hover { text-decoration: underline }
 
 .desktop-only { display: none }
 
+.connect-t {
+  margin-top: 4px !important;
+  border-top-left-radius: 6px !important;
+  border-top-right-radius: 6px !important;
+}
+.connect-b {
+  margin-bottom: 0 !important;
+  border-bottom-left-radius: 6px !important;
+  border-bottom-right-radius: 6px !important;
+}
+.connect-full {
+  margin-top: 4px !important;
+  margin-bottom: 0 !important;
+  margin-bottom: 4px !important;
+  border-radius: 6px !important;
+}
+
 @media (min-width: 1280px) {
   .desktop-only { display: block }
 }
@@ -209,7 +226,7 @@ header {
   border-left: 1px solid rgb(var(--white-rgb) / 0.12);
   border-right: 1px solid rgb(var(--white-rgb) / 0.12);
   background-color: rgb(var(--gray-800-rgb) / 0.40);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px) brightness(1.8);
 }
 
 .main-bg-tech {
@@ -233,7 +250,6 @@ header {
 .main-bg-shapes-4 {
   background: rgb(var(--black-rgb)) url('../assets/img/shapes_bg_04.svg') no-repeat center center / cover;
 }
-
 
 @media (max-width: 768px) {
   .main-container {
@@ -269,7 +285,7 @@ header {
 
 .card {
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 16px;
   --border-width: 1px;
   display: flex;
   overflow: clip;
@@ -361,8 +377,9 @@ fieldset {
   gap: 16px;
   width: 100%;
   padding: 14px;
-  border-radius: 6px;
+  margin-top: 10px;
   margin-bottom: 20px;
+  border-radius: 16px;
   display: flex;
   box-sizing: border-box;
   flex-direction: column;
@@ -371,7 +388,9 @@ fieldset {
   backdrop-filter: blur(10px);
 }
 legend {
-  padding: 0 10px;
+  padding: 2px 4px;
+  margin-left: 6px;
+  font-size: 1.25rem;
   font-weight: bold;
   color: rgb(var(--white-rgb));
 }
@@ -450,7 +469,7 @@ input[type="checkbox"], input[type="radio"] {
 }
 input[type="range"] {
   height: 8px;
-  border-radius: 5px;
+  border-radius: 6px;
   outline: none;
   appearance: none;
   background-color: rgb(var(--white-rgb) / 0.06);
@@ -499,15 +518,15 @@ input[type="color"] {
   margin-top: 8px;
 }
 
+.input-hint {
+  font-size: 0.8em;
+  color: rgb(var(--white-rgb) / 0.50);
+}
 .input-group {
   gap: 5px;
   display: flex;
   flex-direction: row;
   align-items: center;
-}
-.input-hint {
-  font-size: 0.8em;
-  color: rgb(var(--white-rgb) / 0.50);
 }
 
 .checkbox-group {
@@ -556,7 +575,7 @@ table {
 .table-container {
   width: 100%;
   margin: 20px 0;
-  border-radius: 10px;
+  border-radius: 16px;
   max-width: calc(100dvw - 82px);
   overflow-x: auto;
   border: 1px solid rgb(var(--white-rgb) / 0.12);
@@ -574,7 +593,7 @@ iframe, .example-img {
   width: fit-content;
   height: auto;
   max-width: 400px;
-  border-radius: 8px;
+  border-radius: 6px;
   outline: 1px solid rgb(var(--gray-700-rgb) / 0.50);
   background: rgb(var(--gray-600-rgb) / 0.12);
 }
@@ -601,7 +620,7 @@ iframe, .example-img {
   padding: 15px;
   margin: 20px 0;
   max-width: 100%;
-  border-radius: 8px;
+  border-radius: 16px;
   display: grid;
   grid-template-areas:
     "grid-header grid-header grid-header"
@@ -614,7 +633,7 @@ iframe, .example-img {
 
 .grid-item {
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 6px;
   text-align: center;
   border: 1px solid rgb(var(--gray-700-rgb) / 0.70);
 }
@@ -747,19 +766,21 @@ iframe, .example-img {
 
 
 /**************************************** CUSTOM PrismJS CODE BLOCKS ****************************************/
+
 code {
   padding: 0 3px;
-  border-radius: 5px;
+  border-radius: 6px;
   font-family: 'JetBrains Mono', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   border: 1px solid rgb(var(--accent-rgb) / 0.12);
   background-color: rgb(var(--accent-rgb) / 0.20);
 }
+
 pre[class*="language-"] {
   margin: 10px 0;
   padding: 15px;
   max-width: 100%;
   line-height: 1.1rem;
-  border-radius: 5px;
+  border-radius: 6px;
   overflow-x: auto;
   text-align: left;
   white-space: pre;
@@ -774,7 +795,6 @@ pre[class*="language-"] {
   border: 1px solid rgb(var(--gray-700-rgb) / 0.50) !important;
   background-color: rgb(var(--black-rgb) / 0.80) !important;
 }
-pre.blur { backdrop-filter: blur(50px) !important }
 pre[class*="language-"] > code[class*="language-"] {
   margin: 0 !important;
   padding: 0 !important;
@@ -786,6 +806,24 @@ pre[class*="language-"] > code[class*="language-"] {
   border: 0 !important;
   outline: 0 !important;
   background: none !important;
+}
+
+pre.blur { backdrop-filter: blur(50px) !important }
+pre.connect-t {
+  margin-top: 4px !important;
+  border-bottom-left-radius: 16px !important;
+  border-bottom-right-radius: 16px !important;
+}
+pre.connect-b {
+  margin-bottom: 0 !important;
+  border-top-left-radius: 16px !important;
+  border-top-right-radius: 16px !important;
+}
+pre.connect-full {
+  margin-top: 4px !important;
+  margin-bottom: 0 !important;
+  margin-bottom: 4px !important;
+  border-radius: 16px !important;
 }
 
 .token.cdata,
