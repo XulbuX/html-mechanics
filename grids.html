@@ -8,6 +8,7 @@
     content="A showcase of responsive HTML grids, demonstrating layout techniques using CSS Grid. Resize your browser to see the grid adapt.">
   <title>HTML Grids</title>
   <link rel="icon" href="assets/favicon/grids.svg" sizes="any" type="image/svg+xml">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
   <link rel="stylesheet" href="css/font.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
@@ -32,7 +33,11 @@
         <h2 style="margin-top: 0;">Live Responsive Grid Example</h2>
         <p>
           This example demonstrates a typical webpage layout created with CSS Grid. It adapts to different screen sizes.
-          <br><strong>Resize your browser window to see the layout changes.</strong>
+        </p>
+        <p style="margin-top: 10px;" class="desktop-only">
+          <strong style="color: rgb(var(--accent-rgb));">
+            Resize your browser window to see the layout changes.
+          </strong>
         </p>
       </div>
 
@@ -69,8 +74,71 @@
         Notice how the "Navigation", "Main Content", and "Sidebar" areas rearrange themselves based on the window width.
         The distinct background colors help visualize these different grid areas.
       </p>
+
+      <div class="card" style="margin-top: 40px;">
+        <h2 style="margin-top: 0;">Full-Page Grid Layout</h2>
+        <p>
+          For a robust full-page layout, you can apply CSS Grid directly to the <code>&lt;body&gt;</code> element.
+          This approach uses semantic HTML tags like <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>,
+          <code>&lt;main&gt;</code>, <code>&lt;aside&gt;</code>, and <code>&lt;footer&gt;</code> as grid items,
+          creating a clean and accessible structure.
+        </p>
+        <pre style="margin-bottom: 0;"><code class="language-html">&lt;body&gt;
+
+  &lt;header&gt;Header&lt;/header&gt;
+
+  &lt;nav&gt;Navigation&lt;/nav&gt;
+  &lt;main&gt;Main Content&lt;/main&gt;
+  &lt;aside&gt;Sidebar&lt;/aside&gt;
+
+  &lt;footer&gt;Footer&lt;/footer&gt;
+
+&lt;/body&gt;</code></pre>
+      </div>
+
+      <div class="card" style="margin-top: 40px;">
+        <h2 style="margin-top: 0;">CSS Implementation</h2>
+        <p>
+          In the CSS, you define the grid on the <code>&lt;body&gt;</code>. The <code>grid-template-areas</code>
+          property maps the semantic elements to the desired layout. Media queries are then used to create a responsive
+          design that adapts to different screen sizes.
+        </p>
+        <pre style="margin-bottom: 0;"><code class="language-css">body {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 200px 1fr 200px;
+  grid-template-areas:
+    "header header header"
+    "nav    main   aside "
+    "footer footer footer";
+  gap: 10px;
+}
+
+header { grid-area: header }
+nav    { grid-area: nav }
+main   { grid-area: main }
+aside  { grid-area: aside }
+footer { grid-area: footer }
+
+/* Everything below each other on small screens */
+@media (max-width: 768px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "nav   "
+      "main  "
+      "aside "
+      "footer";
+  }
+}</code></pre>
+      </div>
     </section>
   </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
 </body>
 
 </html>
