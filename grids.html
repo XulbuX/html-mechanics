@@ -102,34 +102,34 @@
           design that adapts to different screen sizes.
         </p>
       </div>
-      <pre class="blur connect-t"><code class="language-css">body {
+      <pre class="blur connect-t"><code class="language-css">header { grid-area: header-area }
+nav    { grid-area: nav-area    }
+main   { grid-area: main-area   }
+aside  { grid-area: aside-area  }
+footer { grid-area: footer-area }
+
+body {
   display: grid;
   min-height: 100vh;
   grid-template-rows: auto 1fr auto;
   grid-template-columns: 200px 1fr 200px;
   grid-template-areas:
-    "header header header"
-    "nav    main   aside "
-    "footer footer footer";
+    "header-area header-area header-area"
+    "nav-area    main-area   aside-area "
+    "footer-area footer-area footer-area";
   gap: 10px;
 }
-
-header { grid-area: header }
-nav    { grid-area: nav    }
-main   { grid-area: main   }
-aside  { grid-area: aside  }
-footer { grid-area: footer }
 
 /* Everything below each other on small screens */
 @media (max-width: 768px) {
   body {
     grid-template-columns: 1fr;
     grid-template-areas:
-      "header"
-      "nav   "
-      "main  "
-      "aside "
-      "footer";
+      "header-area"
+      "nav-area   "
+      "main-area  "
+      "aside-area "
+      "footer-area";
   }
 }</code></pre>
     </section>
