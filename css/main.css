@@ -624,7 +624,7 @@ iframe, .example-img {
   display: grid;
   grid-template-areas:
     "grid-header grid-header grid-header"
-    "grid-nav grid-main grid-aside"
+    "grid-nav    grid-main   grid-aside "
     "grid-footer grid-footer grid-footer";
   grid-template-columns: 1fr 2.5fr 1fr;
   grid-template-rows: auto 1fr auto;
@@ -714,8 +714,8 @@ iframe, .example-img {
   .grid-container {
     grid-template-areas:
       "grid-header grid-header"
-      "grid-nav grid-nav"
-      "grid-main grid-aside"
+      "grid-nav    grid-nav   "
+      "grid-main   grid-aside "
       "grid-footer grid-footer";
     grid-template-columns: 1fr 1fr;
   }
@@ -743,9 +743,9 @@ iframe, .example-img {
   .grid-container {
     grid-template-areas:
       "grid-header"
-      "grid-nav"
-      "grid-main"
-      "grid-aside"
+      "grid-nav   "
+      "grid-main  "
+      "grid-aside "
       "grid-footer";
     grid-template-columns: 1fr;
   }
