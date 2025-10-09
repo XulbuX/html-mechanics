@@ -208,23 +208,31 @@ header {
 /**************************************** MAIN SECTION ****************************************/
 
 .main-mt { margin-top: var(--main-space-t) !important }
+.main-mb { margin-bottom: var(--main-space-b) !important }
 .main-mx {
   margin-left: var(--main-space-x) !important;
   margin-right: var(--main-space-x) !important;
   max-width: calc(100vw - ((2 * var(--main-space-x)) + 4px));
 }
-.main-mb { margin-bottom: var(--main-space-b) !important }
+.main-my {
+  margin-top: var(--main-space-b) !important;
+  margin-bottom: var(--main-space-b) !important;
+}
 .main-m {
   margin: var(--main-space-t) var(--main-space-x) var(--main-space-b) var(--main-space-x) !important;
   max-width: calc(100vw - ((2 * var(--main-space-x)) + 4px));
 }
 
 .main-pt { padding-top: var(--main-space-t) !important }
+.main-pb { padding-bottom: var(--main-space-b) !important }
 .main-px {
   padding-left: var(--main-space-x) !important;
   padding-right: var(--main-space-x) !important;
 }
-.main-pb { padding-bottom: var(--main-space-b) !important }
+.main-py {
+  padding-top: var(--main-space-b) !important;
+  padding-bottom: var(--main-space-b) !important;
+}
 .main-p { padding: var(--main-space-t) var(--main-space-x) var(--main-space-b) var(--main-space-x) !important }
 
 .main-container {
